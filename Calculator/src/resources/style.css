@@ -13,24 +13,41 @@ and open the template in the editor.
 }
 
 .equalsButton{
-
-}
-
-
-
-.button {
-    -fx-font: 16px "Serif";
-    -fx-padding: 10;
-    -fx-background-color: #CCFF99;
-    -fx-border-color: black;
-
-}
-
-.button1{
-    -fx-text-fill: yellow;
+      -fx-text-fill: yellow;
     -fx-background-color: blue;
     -fx-border-radius: 20;
     -fx-background-radius: 20;
     -fx-padding: 5;
+}
+
+.button1{
+    -fx-text-fill: yellow;
+    -fx-background-color: grey;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-padding: 5; 
     
+}
+
+.button2{
+     -fx-text-fill: yellow;
+    -fx-background-color: black;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-padding: 5; 
+}
+.acButton{
+     -fx-text-fill: black;
+    -fx-background-color: red;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-padding: 5; 
+}
+.result{
+    -fx-text-fill: yellow;
+    -fx-background-color: black;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-padding: 5;
+     
 }

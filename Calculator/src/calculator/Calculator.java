@@ -36,7 +36,7 @@ public class Calculator extends Application {
         Scene scene = new Scene(calculatorgui, 720, 500);
         scene.getStylesheets().add("resources/style.css");
     
-        primaryStage.setTitle("Hello World!");
+        primaryStage.setTitle("calculator");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
