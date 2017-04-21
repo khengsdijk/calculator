@@ -20,8 +20,8 @@ import javafx.stage.Stage;
  */
 public class Calculator extends Application {
     
-    private final static int SCENE_WIDTH = 300;
-    private final static int SCENE_HEIGHT = 400;
+    private final static int SCENE_WIDTH = 310;
+    private final static int SCENE_HEIGHT = 310;
     private Stage stage;
     
     @Override
@@ -33,7 +33,7 @@ public class Calculator extends Application {
         
         
         
-        Scene scene = new Scene(calculatorgui, 720, 500);
+        Scene scene = new Scene(calculatorgui, SCENE_WIDTH, SCENE_HEIGHT);
         scene.getStylesheets().add("resources/style.css");
     
         primaryStage.setTitle("calculator");

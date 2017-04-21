@@ -29,6 +29,7 @@ public class CalculatorGui extends GridPane{
         results.getStyleClass().add("result");
         results.setMinHeight(50);
         results.setFont(Font.font("Verdana", FontWeight.BOLD, 14));
+        results.setEditable(false);
         
         Button equalsButton = new Button();
         equalsButton.setText("=");
@@ -50,7 +51,7 @@ public class CalculatorGui extends GridPane{
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
+                CalculatorController.setResultText(results, "(");
             }
         });
         
@@ -62,7 +63,7 @@ public class CalculatorGui extends GridPane{
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
+                CalculatorController.setResultText(results, ")");
             }
         });
         Button percentageButton = new Button();
@@ -73,7 +74,7 @@ public class CalculatorGui extends GridPane{
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
+                CalculatorController.setResultText(results, "%");
             }
         });
         
@@ -85,7 +86,7 @@ public class CalculatorGui extends GridPane{
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
+                CalculatorController.acButtonAction(results);
             }
         });
         
@@ -99,7 +100,7 @@ public class CalculatorGui extends GridPane{
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
+                CalculatorController.setResultText(results, "7");
             }
         });
         
@@ -111,7 +112,7 @@ public class CalculatorGui extends GridPane{
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
+                CalculatorController.setResultText(results, "8");
             }
         });
         
@@ -123,7 +124,7 @@ public class CalculatorGui extends GridPane{
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
+                CalculatorController.setResultText(results, "9");
             }
         });
         Button divideButton = new Button();
@@ -134,7 +135,7 @@ public class CalculatorGui extends GridPane{
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
+                CalculatorController.setResultText(results, "\u00F7");
             }
         });
         
@@ -146,7 +147,7 @@ public class CalculatorGui extends GridPane{
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
+                CalculatorController.setResultText(results, "4");
             }
         });
         
@@ -158,7 +159,7 @@ public class CalculatorGui extends GridPane{
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
+                 CalculatorController.setResultText(results, "5");
             }
         });
         Button sixButton = new Button();
@@ -169,19 +170,19 @@ public class CalculatorGui extends GridPane{
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
+                 CalculatorController.setResultText(results, "6");
             }
         });
         
         Button multiplyButton = new Button();
-        multiplyButton.setText("\u00F7");
+        multiplyButton.setText("\u00D7");
         multiplyButton.setPrefSize(BUTTON_WIDTH, BUTTON_HEIGTH);
         multiplyButton.getStyleClass().add("button1");
         multiplyButton.setOnAction(new EventHandler<ActionEvent>() {
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
+                CalculatorController.setResultText(results, "\u00D7");
             }
         });
         
@@ -193,7 +194,7 @@ public class CalculatorGui extends GridPane{
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
+                CalculatorController.setResultText(results, "1");
             }
         });
         
@@ -205,7 +206,7 @@ public class CalculatorGui extends GridPane{
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
+                CalculatorController.setResultText(results, "2");
             }
         });
         
@@ -217,7 +218,7 @@ public class CalculatorGui extends GridPane{
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
+                CalculatorController.setResultText(results, "3");
             }
         });
         
@@ -229,7 +230,7 @@ public class CalculatorGui extends GridPane{
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
+                CalculatorController.setResultText(results, "+");
             }
         });
         
@@ -241,7 +242,7 @@ public class CalculatorGui extends GridPane{
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
+                CalculatorController.setResultText(results, "0");
             }
         });
         
@@ -254,7 +255,7 @@ public class CalculatorGui extends GridPane{
             @Override
             public void handle(ActionEvent event) {
                
-                System.out.println("Hello World!");
+                CalculatorController.setResultText(results, ".");
                 
             }
         });
@@ -266,7 +267,7 @@ public class CalculatorGui extends GridPane{
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
+                CalculatorController.setResultText(results, "-");
             }
         });
         
