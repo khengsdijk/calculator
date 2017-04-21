@@ -253,10 +253,9 @@ public class CalculatorGui extends GridPane{
             
             @Override
             public void handle(ActionEvent event) {
-                dotButton.getStyleClass().add("button2");
+               
                 System.out.println("Hello World!");
-                dotButton.getStyleClass().clear();
-                dotButton.getStyleClass().add("button1");
+                
             }
         });
         Button minusButton = new Button();
