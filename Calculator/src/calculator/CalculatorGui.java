@@ -7,7 +7,9 @@ package calculator;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 
 /**
@@ -18,10 +20,13 @@ public class CalculatorGui extends GridPane{
 
     public CalculatorGui() {
         
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.getStyleClass().add("button1");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
+        TextField results = new TextField();
+        
+        
+        Button equalsButton = new Button();
+        equalsButton.setText("=");
+        equalsButton.getStyleClass().add("button1");
+        equalsButton.setOnAction(new EventHandler<ActionEvent>() {
             
             @Override
             public void handle(ActionEvent event) {
@@ -29,6 +34,18 @@ public class CalculatorGui extends GridPane{
             }
         });
         
+        
+        
+        
+        
+        this.getStyleClass().add("pane");
+        this.setHgap(15);
+        this.setVgap(15);
+        this.setPadding(new Insets(10, 10, 10, 10));
+        this.add(equalsButton, 0, 4);
+        this.add(results, 0, 0, 1, 4);
     }
+    
+  
         
 }

@@ -20,24 +20,22 @@ import javafx.stage.Stage;
  */
 public class Calculator extends Application {
     
+    private final static int SCENE_WIDTH = 300;
+    private final static int SCENE_HEIGHT = 400;
+    private Stage stage;
+    
     @Override
     public void start(Stage primaryStage) {
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.getStyleClass().add("button1");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
         
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
         
-        Scene scene = new Scene(root, 300, 250);
+        CalculatorGui calculatorgui = new CalculatorGui();
+        
+        
+        
+        
+        Scene scene = new Scene(calculatorgui, 720, 500);
         scene.getStylesheets().add("resources/style.css");
+    
         primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);
         primaryStage.show();
