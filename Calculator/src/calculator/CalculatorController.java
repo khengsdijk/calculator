@@ -5,7 +5,13 @@
  */
 package calculator;
 
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.scene.control.TextField;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
 
 /**
  *
@@ -13,7 +19,7 @@ import javafx.scene.control.TextField;
  */
 public class CalculatorController {
     
-    
+    private ArrayList numberPressed = new ArrayList();
 
     public CalculatorController() {
     }
@@ -27,6 +33,16 @@ public class CalculatorController {
         text.setText(text.getText() + ButtonPressed);
     }
     
-    
+    public static void equalsFunction(TextField field, String equation){
+         ScriptEngineManager manager = new ScriptEngineManager();
+    ScriptEngine engine = manager.getEngineByName("JavaScript");
+    String foo = equation;
+        try {
+            field.setText(engine.eval(foo).toString());
+        } catch (ScriptException ex) {
+            field.setText("Syntax error");
+            System.out.println(ex);
+        }
+    }
     
 }

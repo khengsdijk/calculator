@@ -39,9 +39,18 @@ public class CalculatorGui extends GridPane{
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
+                
+                CalculatorController.equalsFunction(results, results.getText());
+                
             }
         });
+        
+        // this is a invisible textfield that stores the numbers pressed so they
+        // can be saved by the calculator
+        TextField numberPressed = new TextField();
+        numberPressed.setVisible(false);
+        numberPressed.setPrefHeight(0);
+        numberPressed.setPrefWidth(0);
         
         Button leftHookButton = new Button();
         leftHookButton.setText("(");
@@ -298,6 +307,7 @@ public class CalculatorGui extends GridPane{
         this.add(dotButton, 1, 6);
         this.add(equalsButton, 2, 6);
         this.add(minusButton, 3, 6);
+        this.add(numberPressed, 1,7);
     }
     
   
