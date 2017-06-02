@@ -6,8 +6,7 @@
 package calculator;
 
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 import javafx.scene.control.TextField;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
@@ -19,9 +18,20 @@ import javax.script.ScriptException;
  */
 public class CalculatorController {
     
-    private ArrayList numberPressed = new ArrayList();
-
+    private ArrayList<Integer> numberPressed = new ArrayList();
+    
+    private int firstNumber;
+    private int Result;
+    
     public CalculatorController() {
+    }
+    Operation operation;
+    public enum Operation{
+        ADD,
+        SUBSTRACT,
+        DIVIDE,
+        MULTIPLY,
+        REMAINDER
     }
     
     public static void acButtonAction(TextField textfield){
@@ -42,6 +52,33 @@ public class CalculatorController {
         } catch (ScriptException ex) {
             field.setText("Syntax error");
             System.out.println(ex);
+        }
+    }
+    
+    public static void equalsFunction(TextField field, Operation operation,
+            String buttonpressed){
+            
+        switch (operation){
+            case ADD:
+                
+                break;
+                
+            case SUBSTRACT:
+                
+                break;
+                
+            case DIVIDE:
+                
+                break;
+                
+            case MULTIPLY:
+                
+                break;
+                
+            case REMAINDER:
+                
+                break;
+            
         }
     }
     
