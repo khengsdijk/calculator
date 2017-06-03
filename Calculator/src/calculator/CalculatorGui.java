@@ -23,6 +23,7 @@ public class CalculatorGui extends GridPane{
     private final int BUTTON_WIDTH = 60;
     private final int BUTTON_HEIGTH = 30;
     
+    private CalculatorController controller = new CalculatorController();
     public CalculatorGui() {
         
         TextField results = new TextField();
@@ -40,8 +41,11 @@ public class CalculatorGui extends GridPane{
             @Override
             public void handle(ActionEvent event) {
                 
-                CalculatorController.equalsFunction(results, results.getText());
+               // CalculatorController.equalsFunction(results, results.getText());
                 
+               controller.operationFunction(results, 
+                       CalculatorController.Operation.EQUALS, false);
+               
             }
         });
         
@@ -83,7 +87,8 @@ public class CalculatorGui extends GridPane{
             
             @Override
             public void handle(ActionEvent event) {
-                CalculatorController.setResultText(results, "%");
+                controller.operationFunction(results, 
+                       CalculatorController.Operation.REMAINDER, true);
             }
         });
         
@@ -95,7 +100,8 @@ public class CalculatorGui extends GridPane{
             
             @Override
             public void handle(ActionEvent event) {
-                CalculatorController.acButtonAction(results);
+                controller.operationFunction(results, 
+                       CalculatorController.Operation.CLEAR, true);
             }
         });
         
@@ -144,7 +150,8 @@ public class CalculatorGui extends GridPane{
             
             @Override
             public void handle(ActionEvent event) {
-                CalculatorController.setResultText(results, "\u00F7");
+                controller.operationFunction(results, 
+                       CalculatorController.Operation.DIVIDE, true);
             }
         });
         
@@ -191,7 +198,8 @@ public class CalculatorGui extends GridPane{
             
             @Override
             public void handle(ActionEvent event) {
-                CalculatorController.setResultText(results, "\u00D7");
+                controller.operationFunction(results, 
+                       CalculatorController.Operation.MULTIPLY, true);
             }
         });
         
@@ -239,7 +247,9 @@ public class CalculatorGui extends GridPane{
             
             @Override
             public void handle(ActionEvent event) {
-                CalculatorController.setResultText(results, "+");
+              //  CalculatorController.setResultText(results, "+");
+              controller.operationFunction(results, 
+                      CalculatorController.Operation.ADD, true);
             }
         });
         
@@ -276,7 +286,8 @@ public class CalculatorGui extends GridPane{
             
             @Override
             public void handle(ActionEvent event) {
-                CalculatorController.setResultText(results, "-");
+                controller.operationFunction(results, 
+                       CalculatorController.Operation.SUBSTRACT, true);
             }
         });
         

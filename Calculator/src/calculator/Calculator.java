@@ -22,7 +22,7 @@ public class Calculator extends Application {
     
     private final static int SCENE_WIDTH = 310;
     private final static int SCENE_HEIGHT = 310;
-    private Stage stage;
+    
     
     @Override
     public void start(Stage primaryStage) {
@@ -35,7 +35,9 @@ public class Calculator extends Application {
         
         Scene scene = new Scene(calculatorgui, SCENE_WIDTH, SCENE_HEIGHT);
         scene.getStylesheets().add("resources/style.css");
-    
+        
+        
+        primaryStage.setResizable(false);
         primaryStage.setTitle("calculator");
         primaryStage.setScene(scene);
         primaryStage.show();
