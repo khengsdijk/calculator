@@ -6,12 +6,7 @@
 package calculator;
 
 import java.util.ArrayList;
-
 import javafx.scene.control.TextField;
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
-
 /**
  *
  * @author koen hengsdijk
@@ -20,9 +15,9 @@ public class CalculatorController {
     
     private ArrayList<Integer> numberPressed = new ArrayList();
     
-    private int firstNumber;
-    private int secondNumber;
-    private int Result;
+    private double  firstNumber;
+    private double secondNumber;
+    private double Result;
     private boolean firstNumberEntered = false;
     private Operation lastOperation;
     
@@ -48,17 +43,7 @@ public class CalculatorController {
         text.setText(text.getText() + ButtonPressed);
     }
     
-    public static void equalsFunction(TextField field, String equation){
-         ScriptEngineManager manager = new ScriptEngineManager();
-    ScriptEngine engine = manager.getEngineByName("JavaScript");
-    String foo = equation;
-        try {
-            field.setText(engine.eval(foo).toString());
-        } catch (ScriptException ex) {
-            field.setText("Syntax error");
-            System.out.println(ex);
-        }
-    }
+
     
     public void operationFunction(TextField field, Operation operation, 
             boolean equalsButton){
@@ -67,15 +52,15 @@ public class CalculatorController {
             case ADD:
                 lastOperation = Operation.ADD;
                 if(!firstNumberEntered && equalsButton){
-                firstNumber = Integer.parseInt(field.getText());
+                firstNumber = Double.parseDouble(field.getText());
                 
                 field.clear();
                 firstNumberEntered = true;
                 } else{
-                    secondNumber = Integer.parseInt(field.getText());
+                    secondNumber = Double.parseDouble(field.getText());
                     Result = firstNumber + secondNumber;
                     field.clear();
-                    field.setText(Integer.toString(Result));
+                    field.setText(Double.toString(Result));
                     firstNumberEntered = false;
                 }
                 
@@ -85,15 +70,15 @@ public class CalculatorController {
                 
                 lastOperation = Operation.SUBSTRACT;
                 if(!firstNumberEntered && equalsButton){
-                firstNumber = Integer.parseInt(field.getText());
+                firstNumber = Double.parseDouble(field.getText());
                 
                 field.clear();
                 firstNumberEntered = true;
                 } else{
-                    secondNumber = Integer.parseInt(field.getText());
+                    secondNumber = Double.parseDouble(field.getText());
                     Result = firstNumber - secondNumber;
                     field.clear();
-                    field.setText(Integer.toString(Result));
+                    field.setText(Double.toString(Result));
                     firstNumberEntered = false;
                 }
                 
@@ -104,15 +89,15 @@ public class CalculatorController {
                 
                 lastOperation = Operation.DIVIDE; 
                 if(!firstNumberEntered && equalsButton){
-                firstNumber = Integer.parseInt(field.getText());
+                firstNumber = Double.parseDouble(field.getText());
                 
                 field.clear();
                 firstNumberEntered = true;
                 } else{
-                    secondNumber = Integer.parseInt(field.getText());
+                    secondNumber = Double.parseDouble(field.getText());
                     Result = firstNumber / secondNumber;
                     field.clear();
-                    field.setText(Integer.toString(Result));
+                    field.setText(Double.toString(Result));
                     firstNumberEntered = false;
                 }
                 
@@ -123,15 +108,15 @@ public class CalculatorController {
                 
                 lastOperation = Operation.MULTIPLY;
                 if(!firstNumberEntered && equalsButton){
-                firstNumber = Integer.parseInt(field.getText());
+                firstNumber = Double.parseDouble(field.getText());
                 
                 field.clear();
                 firstNumberEntered = true;
                 } else{
-                    secondNumber = Integer.parseInt(field.getText());
+                    secondNumber = Double.parseDouble(field.getText());
                     Result = firstNumber * secondNumber;
                     field.clear();
-                    field.setText(Integer.toString(Result));
+                    field.setText(Double.toString(Result));
                     firstNumberEntered = false;
                 }
                 
@@ -143,15 +128,15 @@ public class CalculatorController {
                 
                 lastOperation = Operation.REMAINDER;
                 if(!firstNumberEntered && equalsButton){
-                firstNumber = Integer.parseInt(field.getText());
+                firstNumber = Double.parseDouble(field.getText());
                 
                 field.clear();
                 firstNumberEntered = true;
                 } else{
-                    secondNumber = Integer.parseInt(field.getText());
+                    secondNumber = Double.parseDouble(field.getText());
                     Result = firstNumber % secondNumber;
                     field.clear();
-                    field.setText(Integer.toString(Result));
+                    field.setText(Double.toString(Result));
                     firstNumberEntered = false;
                 }
                 
